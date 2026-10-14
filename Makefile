@@ -135,7 +135,7 @@ endif
 C_SOURCES =  \
 $(SYS) \
 Core/Src/main.c \
-
+Core/Src/init.c \
 # ASM sources
 ASM_SOURCES =  \
 $(ASM)
@@ -261,7 +261,7 @@ $(BUILD_DIR):
 # clean up
 #######################################
 clean:
-	@"rm" -fR $(BUILD_DIR)
+	-@cmd /c rd /s /q $(BUILD_DIR) 2>nul || exit 0
   
 #######################################
 # openocd
